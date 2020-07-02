@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+/* styling done for the body of the page */
+body{
+    background: #003366  url(./image/Backround.jpg) no-repeat center center/cover;
+    color: #fff;
+    font-family: 'Monsterrat', sans-serif;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+/* styling for the container of the which contains pointer,circle,gradient circle */
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 300px;
+    margin: auto;
+    position: relative;
+    transform: scale(1);
+}
+
+/* styling for gradiant circle including the defining three modes of breathing */
+.gradient-circle {
+    background: conic-gradient(
+      #55b7a4 0%,
+      #4ca493 40%,
+      #fff 40%,
+      #fff 60%,
+      #336d62 60%,
+      #2a5b52 100%
+    );
+    height: 320px;
+    width: 320px;
+    z-index: -2;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+  }
+
+  /* style and color for the circle */
+.circle{
+    background-color:orange;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+/* defining style for the rotating pointer */
+.pointer{
+    background-color: #fff;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    display: block;
+}
+
+/* defining length and movement of pointer from center of circle*/
+.pointer-container{
+    position: absolute;
+    top: -40px;
+    left: 140px;
+    width: 20px;
+    height: 190px;
+    animation: rotate 7.5s linear forwards infinite;
+    transform-origin: bottom center;
+}
+
+/* animation for breath in */
+.container.grow{
+    animation: grow 3s linear forwards;
+}
+
+/* animation for breath out */
+.container.shrink{
+    animation: shrink 3s linear forwards;
+}
+
+/* defining condtion to roate */
+@keyframes rotate{
+    form{
+        transform: rotate(0deg);
+    }
+
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/* defining condition for grow */
+@keyframes grow{
+    form{
+        transform: scale(1);
+    }
+
+    to{
+        transform: scale(1.2);
+    }
+}
+/* defining condition for shrink */
+
+@keyframes shrink{
+    form{
+        transform: scale(1.2);
+    }
+
+    to{
+        transform: scale(1);
+    }
+}
